@@ -32,13 +32,10 @@ public class LoginServiceImpl implements LoginService {
     public String register(User user) {
         User user1 = loginMapper.findUser(user.getUserName(), user.getUserEmail());
         if (user1 != null) {
-            if (user1.getUserName() != null) {
-                return "用户名已存在";
-            } else if (user1.getUserEmail() != null) {
-                return "邮箱已注册";
-            }
+            return "用户名和邮箱已存在";
+        }else {
+            loginMapper.insertUser(user.getUserName(),user.getUserEmail(),user.getUserPassword());
+            return "注册成功";
         }
-        loginMapper.insertUser(user.getUserName(),user.getUserEmail(),user.getUserPassword());
-        return "注册成功";
     }
 }

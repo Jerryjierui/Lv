@@ -1,5 +1,6 @@
 package com.lut.project.Controller;
 
+import com.lut.project.Entity.Result;
 import com.lut.project.Entity.User;
 import com.lut.project.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,15 +14,23 @@ public class LoginController {
     private LoginService loginService;
 
     @PostMapping("/login")
-    public String login(@RequestBody User user){
+    public Result login(@RequestBody User user){
+
         String login = loginService.login(user);
-        return login;
+        if(login.equals("登录失败")){
+            return Result.error("用户名或密码错误");
+        }
+        return Result.success();
     }
 
     @PostMapping("/register")
-    public String register(@RequestBody User user){
+    public Result register(@RequestBody User user){
         String register = loginService.register(user);
-        return register;
+        if (register.equals("用户名和邮箱已存在")){
+            return  Result.error("用户名和邮箱已存在");
+        }else {
+            return Result.success();
+        }
     }
 
 
