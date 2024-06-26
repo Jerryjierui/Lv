@@ -4,15 +4,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lut.project.Mapper.LoginMapper" >
     <insert id="insertUser">
-        insert into java_test.tb_user(userName,role,userPassword)
+        insert into java_test.user(userName,role,userPassword)
         values (#{userName},#{role},#{userPassword})
     </insert>
 
     <select id="searchUser" resultType="com.lut.project.Entity.User">
-        select * from java_test.tb_user where userName = #{userName}
+        select * from java_test.user where userName = #{userName}
                                           and userPassword = #{userPassword}
     </select>
     <select id="selectByUserName" resultType="com.lut.project.Entity.User">
-        select * from java_test.tb_user where userName = #{userName}
+        select * from java_test.user where userName = #{userName}
     </select>
 </mapper>

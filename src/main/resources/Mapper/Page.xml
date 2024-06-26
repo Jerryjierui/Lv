@@ -9,4 +9,15 @@
         select *
         from java_test.user;
     </select>
+    <select id="selectById" resultType="com.lut.project.Entity.User">
+        select * from java_test.user where Id = #{id};
+    </select>
+    <select id="selectByName" resultType="com.lut.project.Entity.User">
+        select *
+        from java_test.user where userName = #{userName};
+    </select>
+    <select id="selectPhone" resultType="java.lang.Integer">
+        select *
+        from java_test.user where userPhone = #{userPhone};
+    </select>
 </mapper>

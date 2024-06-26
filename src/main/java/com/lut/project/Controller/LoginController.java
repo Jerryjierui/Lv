@@ -1,6 +1,7 @@
 package com.lut.project.Controller;
 
 import cn.hutool.core.util.StrUtil;
+import com.lut.project.Entity.AuthAccess;
 import com.lut.project.Entity.Result;
 import com.lut.project.Entity.User;
 import com.lut.project.Service.LoginService;
@@ -9,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping()
 public class LoginController {
 
     @Autowired
@@ -20,10 +21,11 @@ public class LoginController {
         if(StrUtil.isBlank(user.getUserName()) || StrUtil.isBlank(user.getUserPassword())){
             return Result.error("数据不合法");
         }
-        User login = loginService.login(user);
-        return Result.success(login);
+        User dbUser = loginService.login(user);
+        return Result.success(dbUser);
     }
 
+    @AuthAccess
     @PostMapping("/register")
     public Result register(@RequestBody User user){
         if (StrUtil.isBlank(user.getUserName())
@@ -31,7 +33,7 @@ public class LoginController {
                 || StrUtil.isBlank(user.getRole())){
             return Result.error("数据不合法");
         }
-         loginService.register(user);
-            return Result.success("注册成功");
+        loginService.register(user);
+        return Result.success("注册成功");
         }
     }

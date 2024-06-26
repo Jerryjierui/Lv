@@ -4,13 +4,14 @@ import lombok.Data;
 
 @Data
 public class User {
-    private int Id;
+    private Integer Id;
     private String userName;
     private String userPassword;
     private int age;
+    private String userPhone;
     private String role;
     private String address;
 
-    private int card;
+    private String token;
 
 }
