@@ -5,7 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface LoginMapper {
-    void insertUser(String userName,String userEmail,String userPassword);
-    User findUser(String userName,String userEmail);
-    User searchUser(String userEmail, String userPassword);
+    void insertUser(String userName,String role,String userPassword);
+    User searchUser(String userName, String userPassword);
+
+    User selectByUserName(String userName);
 }
