@@ -1,6 +1,6 @@
-package com.lut.project.Util.exception;
+package com.lut.project.util.exception;
 
-import com.lut.project.Entity.Result;
+import com.lut.project.entity.Result;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

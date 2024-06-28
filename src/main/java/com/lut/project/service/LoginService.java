@@ -1,6 +1,6 @@
-package com.lut.project.Service;
+package com.lut.project.service;
 
-import com.lut.project.Entity.User;
+import com.lut.project.entity.User;
 
 public interface LoginService {
     User login(User user);

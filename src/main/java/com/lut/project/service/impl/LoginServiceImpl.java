@@ -1,10 +1,10 @@
-package com.lut.project.Service.Impl;
+package com.lut.project.service.impl;
 
-import com.lut.project.Entity.User;
-import com.lut.project.Mapper.LoginMapper;
-import com.lut.project.Service.LoginService;
-import com.lut.project.Util.TokenUtils.TokenUtils;
-import com.lut.project.Util.exception.ServiceException;
+import com.lut.project.entity.User;
+import com.lut.project.mapper.LoginMapper;
+import com.lut.project.service.LoginService;
+import com.lut.project.util.tokenUtils.TokenUtils;
+import com.lut.project.util.exception.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

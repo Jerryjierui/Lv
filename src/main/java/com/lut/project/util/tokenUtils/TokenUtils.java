@@ -1,11 +1,11 @@
-package com.lut.project.Util.TokenUtils;
+package com.lut.project.util.tokenUtils;
 
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.lut.project.Entity.User;
-import com.lut.project.Mapper.PageMapper;
+import com.lut.project.entity.User;
+import com.lut.project.mapper.PageMapper;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;

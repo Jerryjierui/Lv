@@ -2,17 +2,17 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.lut.project.Mapper.PageMapper" >
+<mapper namespace="com.lut.project.mapper.PageMapper" >
 
 
-    <select id="selectAll" resultType="com.lut.project.Entity.User">
+    <select id="selectAll" resultType="com.lut.project.entity.User">
         select *
         from java_test.user;
     </select>
-    <select id="selectById" resultType="com.lut.project.Entity.User">
+    <select id="selectById" resultType="com.lut.project.entity.User">
         select * from java_test.user where Id = #{id};
     </select>
-    <select id="selectByName" resultType="com.lut.project.Entity.User">
+    <select id="selectByName" resultType="com.lut.project.entity.User">
         select *
         from java_test.user where userName = #{userName};
     </select>

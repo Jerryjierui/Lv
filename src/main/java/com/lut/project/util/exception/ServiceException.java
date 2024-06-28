@@ -1,4 +1,4 @@
-package com.lut.project.Util.exception;
+package com.lut.project.util.exception;
 
 import lombok.Getter;
 

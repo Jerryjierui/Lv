@@ -1,8 +1,8 @@
-package com.lut.project.Controller;
+package com.lut.project.controller;
 
-import com.lut.project.Entity.Result;
-import com.lut.project.Entity.User;
-import com.lut.project.Service.PageService;
+import com.lut.project.entity.Result;
+import com.lut.project.entity.User;
+import com.lut.project.service.PageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

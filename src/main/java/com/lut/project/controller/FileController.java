@@ -1,6 +1,6 @@
-package com.lut.project.Controller;
+package com.lut.project.controller;
 
-import com.lut.project.Entity.Result;
+import com.lut.project.entity.Result;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package com.lut.project.Entity;
+package com.lut.project.entity;
 
 import cn.hutool.core.util.StrUtil;
 import com.auth0.jwt.JWT;
@@ -6,9 +6,8 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTDecodeException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.lut.project.Mapper.LoginMapper;
-import com.lut.project.Mapper.PageMapper;
-import com.lut.project.Util.exception.ServiceException;
+import com.lut.project.mapper.PageMapper;
+import com.lut.project.util.exception.ServiceException;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 

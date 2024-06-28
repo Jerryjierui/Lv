@@ -1,11 +1,10 @@
-package com.lut.project.Controller;
+package com.lut.project.controller;
 
 import cn.hutool.core.util.StrUtil;
-import com.lut.project.Entity.AuthAccess;
-import com.lut.project.Entity.Result;
-import com.lut.project.Entity.User;
-import com.lut.project.Service.LoginService;
-import com.lut.project.Util.exception.ServiceException;
+import com.lut.project.entity.AuthAccess;
+import com.lut.project.entity.Result;
+import com.lut.project.entity.User;
+import com.lut.project.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

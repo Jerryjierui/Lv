@@ -1,8 +1,8 @@
-package com.lut.project.Service.Impl;
+package com.lut.project.service.impl;
 
-import com.lut.project.Entity.User;
-import com.lut.project.Mapper.PageMapper;
-import com.lut.project.Service.PageService;
+import com.lut.project.entity.User;
+import com.lut.project.mapper.PageMapper;
+import com.lut.project.service.PageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

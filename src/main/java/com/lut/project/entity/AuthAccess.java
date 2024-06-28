@@ -1,4 +1,4 @@
-package com.lut.project.Entity;
+package com.lut.project.entity;
 
 import java.lang.annotation.*;
 

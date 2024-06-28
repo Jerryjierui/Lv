@@ -1,6 +1,6 @@
-package com.lut.project.Mapper;
+package com.lut.project.mapper;
 
-import com.lut.project.Entity.User;
+import com.lut.project.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

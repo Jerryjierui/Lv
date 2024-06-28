@@ -1,4 +1,4 @@
-package com.lut.project.Entity;
+package com.lut.project.entity;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
