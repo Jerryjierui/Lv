@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lut.project.mapper.UserMapper" >
+
+    <update id="update">
+        update `user` set userName = #{userName}, userPassword = #{userPassword}, userPhone = #{userPhone},
+        role = #{role}, userAddress = #{userAddress}, userAvatar = #{userAvatar} where id = #{id}
+    </update>
+</mapper>
