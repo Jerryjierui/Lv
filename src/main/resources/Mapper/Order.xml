@@ -5,4 +5,59 @@
 <mapper namespace="com.lut.project.mapper.OrderMapper" >
 
 
+    <insert id="insert">
+        INSERT INTO java_test.order
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bookName != null">
+                bookName,
+            </if>
+            <if test="quantity != null">
+                quantity,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="totalPrice != null">
+                totalPrice,
+            </if>
+            <if test="buyerId != null">
+                buyerId,
+            </if>
+            <if test="buyerName != null">
+                buyerName,
+            </if>
+            <if test="buyerPhone != null">
+                buyerPhone,
+            </if>
+            <if test="buyerAddress != null">
+                buyerAddress,
+            </if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="bookName != null">
+                #{bookName},
+            </if>
+            <if test="quantity != null">
+                #{quantity},
+            </if>
+            <if test="price != null">
+                #{price},
+            </if>
+            <if test="totalPrice != null">
+                #{totalPrice},
+            </if>
+            <if test="buyerId != null">
+                #{buyerId},
+            </if>
+            <if test="buyerName != null">
+                #{buyerName},
+            </if>
+            <if test="buyerPhone != null">
+                #{buyerPhone},
+            </if>
+            <if test="buyerAddress != null">
+                #{buyerAddress},
+            </if>
+        </trim>
+    </insert>
 </mapper>
