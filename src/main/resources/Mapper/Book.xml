@@ -3,9 +3,86 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lut.project.mapper.BookMapper" >
+    <insert id="insert">
+        INSERT INTO java_test.book
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="bookName != null">
+                bookName,
+            </if>
+            <if test="cover != null">
+                cover,
+            </if>
+            <if test="author != null">
+                author,
+            </if>
+            <if test="publisher != null">
+                publisher,
+            </if>
+            <if test="bookNumber != null">
+                bookNumber,
+            </if>
+            <if test="classify != null">
+                classify,
+            </if>
+        </trim>
+        <trim prefix="VALUES (" suffix=")" suffixOverrides=",">
+            <if test="bookName != null">
+                #{bookName},
+            </if>
+            <if test="cover != null">
+                #{cover},
+            </if>
+            <if test="author != null">
+                #{author},
+            </if>
+            <if test="publisher != null">
+                #{publisher},
+            </if>
+            <if test="bookNumber != null">
+                #{bookNumber},
+            </if>
+            <if test="classify != null">
+                #{classify},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="update">
+        update java_test.book set bookName = #{bookName}, cover = #{cover}, author = #{author},
+                          publisher = #{publisher}, bookNumber = #{bookNumber}, classify = #{classify} where id = #{id}
+    </update>
+    <update id="updateNumber">
+        update java_test.book set bookNumber = #{bookNumber} where Id = #{id}
+    </update>
+    <delete id="removeById">
+        delete from java_test.book where Id = #{id}
+    </delete>
+    <delete id="removeBatchByIds">
+        DELETE FROM java_test.book
+        WHERE id IN
+        <foreach item="id" collection="ids" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
 
     <select id="selectAllBook" resultType="com.lut.project.entity.Book">
         select *
         from java_test.book;
+    </select>
+    <select id="selectCount" resultType="java.lang.Integer">
+        select count(*)
+        from java_test.book;
+    </select>
+    <select id="selectByNewPage" resultType="com.lut.project.entity.Book">
+        select * from java_test.book <where>
+        <if test="bookName!=null and bookName != ''">
+            and bookName = #{bookName}
+        </if>
+        <if test="publisher!=null and publisher != ''">
+            and publisher = #{publisher}
+        </if>
+
+    </where>
+        order by Id limit #{num} offset #{offset}
     </select>
 </mapper>

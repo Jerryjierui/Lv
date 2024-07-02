@@ -11,6 +11,7 @@ import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
+import java.net.URLEncoder;
 
 @RestController
 @RequestMapping("/file")
@@ -46,7 +47,7 @@ public class FileController {
     @AuthAccess
     @GetMapping("/download/{fileName}")
     public void download(@PathVariable String fileName, HttpServletResponse response) throws IOException {
-//        response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileFullName, "UTF-8"));  // 附件下载
+//        response.addHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, "UTF-8"));  // 附件下载
         String filePath = ROOT_PATH  + File.separator + fileName;
         if (!FileUtil.exist(filePath)) {
             return;
