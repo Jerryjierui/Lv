@@ -60,4 +60,24 @@
             </if>
         </trim>
     </insert>
+    <update id="update">
+        update java_test.order set quantity = #{quantity}, buyerName = #{buyerName}, buyerPhone = #{buyerPhone},
+                                   buyerAddress = #{buyerAddress}, totalPrice = #{totalPrice}  where orderId = #{orderId}
+    </update>
+    <delete id="deleteOrderById">
+        delete from java_test.order where orderId = #{id}
+    </delete>
+
+    <select id="selectAllOrder" resultType="com.lut.project.entity.Order">
+
+        select * from java_test.order <where>
+        <if test="bookName!=null and bookName != ''">
+            and bookName = #{bookName}
+        </if>
+    </where>
+        order by orderId limit #{num} offset #{offset}
+    </select>
+    <select id="selectOrderCount" resultType="java.lang.Integer">
+        select count(*) from java_test.order
+    </select>
 </mapper>

@@ -1,5 +1,6 @@
 package com.lut.project.mapper;
 
+import com.lut.project.entity.Order;
 import com.lut.project.entity.User;
 import com.lut.project.entity.UserQueryParams;
 import org.apache.ibatis.annotations.Mapper;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper {
+
     void update(User user);
     List<User> selectAllStudent();
 

@@ -86,6 +86,7 @@ public class UserController {
      */
     @DeleteMapping("/delete/batch")
     public Result batchDelete(@RequestBody List<Integer> ids) {
+        for(Integer id:ids) System.out.println(id);
         userService.removeBatchByIds(ids);
         return Result.success();
     }
