@@ -23,6 +23,13 @@ public class OrderController {
         return Result.success();
     }
 
+    /**
+     * 查看所有订单
+     * @param pageNum
+     * @param pageSize
+     * @param bookName
+     * @return
+     */
     @GetMapping("/selectAllOrder")
     public Result selectAllOrder(Integer pageNum,
                                  Integer pageSize,
@@ -30,6 +37,18 @@ public class OrderController {
                                  ){
         List<Order> list = orderService.selectAllOrder(pageNum,pageSize,bookName);
         int total = orderService.selectOrderCount();
+        OrderPage orderPage = new OrderPage(total,list);
+        return Result.success(orderPage);
+    }
+
+    @GetMapping("/selectPersonOrder")
+    public Result selectPersonOrder(Integer pageNum,
+                                 Integer pageSize,
+                                 @RequestParam(required = false) String bookName,
+                                    @RequestParam(required = false) String buyerName
+    ){
+        List<Order> list = orderService.selectPersonOrder(pageNum,pageSize,bookName,buyerName);
+        int total = orderService.selectPersonOrderCount(buyerName);
         OrderPage orderPage = new OrderPage(total,list);
         return Result.success(orderPage);
     }

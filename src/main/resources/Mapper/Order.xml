@@ -80,4 +80,18 @@
     <select id="selectOrderCount" resultType="java.lang.Integer">
         select count(*) from java_test.order
     </select>
+    <select id="selectPersonOrder" resultType="com.lut.project.entity.Order">
+        select * from java_test.order <where>
+        <if test="bookName!=null and bookName != ''">
+            and bookName = #{bookName}
+        </if>
+        <if test="buyerName!=null and buyerName != ''">
+            and buyerName = #{buyerName}
+        </if>
+    </where>
+        order by orderId limit #{pageSize} offset #{offset}
+    </select>
+    <select id="selectPersonOrderCount" resultType="java.lang.Integer">
+        select count(*) from java_test.order where buyerName = #{buyerName}
+    </select>
 </mapper>

@@ -11,10 +11,13 @@ public interface OrderService {
     List<Order> selectAllOrder(Integer pageNum, Integer pageSize, String bookName);
 
     int selectOrderCount();
+    int selectPersonOrderCount(String buyerName);
 
     void deleteOrderById(int id);
 
     void deleteOrderByIds(List<Integer> ids);
 
     void update(Order order);
+
+    List<Order> selectPersonOrder(Integer pageNum, Integer pageSize, String bookName, String buyerName);
 }

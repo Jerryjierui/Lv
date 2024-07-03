@@ -32,6 +32,11 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    public int selectPersonOrderCount(String buyerName) {
+        return orderMapper.selectPersonOrderCount(buyerName);
+    }
+
+    @Override
     public void deleteOrderById(int id) {
         orderMapper.deleteOrderById(id);
     }
@@ -46,5 +51,11 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public void update(Order order) {
         orderMapper.update(order);
+    }
+
+    @Override
+    public List<Order> selectPersonOrder(Integer pageNum, Integer pageSize, String bookName, String buyerName) {
+        List<Order> list= orderMapper.selectPersonOrder((pageNum-1)*pageSize,pageSize,bookName,buyerName);
+        return list;
     }
 }

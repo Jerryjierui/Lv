@@ -15,8 +15,11 @@ public interface OrderMapper {
 
 
     int selectOrderCount();
+    int selectPersonOrderCount(String buyerName);
 
     void deleteOrderById(int id);
 
     void update(Order order);
+
+    List<Order> selectPersonOrder(int offset, Integer pageSize, String bookName, String buyerName);
 }
